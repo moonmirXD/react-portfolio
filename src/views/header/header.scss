@@ -1,0 +1,162 @@
+header {
+    background: #1F1B1B;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em 2.2em;
+
+    .logo {
+        color: white;
+        font-size: 1.3rem;
+        span {
+            color: #6246EA;
+        }
+    }
+
+    .logo:hover {
+        color: #6246EA;
+        font-size: 1.3rem;
+        span {
+            color: white;
+        }
+    }
+
+    nav {
+        // display: none;
+    }
+}
+
+.menu-btn {
+    display: block;
+}
+
+nav {
+    position: fixed;
+    width: 50%;
+    z-index: 999;
+    background-color: salmon;
+    padding: 1em;
+    top: 0;
+    right: 0;
+    height: 100vh;
+
+    .close-menu-btn {
+        float: right;
+        display: block;
+        cursor: pointer;
+        filter: invert(93%) sepia(100%) saturate(0%) hue-rotate(248deg) brightness(106%) contrast(106%);
+    }
+    ul {
+        text-align: center;
+        margin: 4em auto;
+
+        li {
+            
+            a {
+                font-size: 2rem;
+                color: white;
+                display: block;
+                padding: 0.3em;
+                font-weight: normal;
+
+                &:hover {
+                    font-weight: bolder;
+                }
+            }
+        }
+    }
+
+}
+
+
+@media only screen and (min-width: 600px) {
+    body {
+      font-size: 18px;
+    }
+
+  }
+
+
+  @media only screen and (min-width: 768px) {
+    body {
+      font-size: 20px;
+    }
+
+    .container {
+        padding: 0 4em;
+    }
+    
+    .menu-btn   {
+        display: none;
+    }
+
+    header {
+        nav {
+            display: flex;
+            justify-content: space-around;
+            background: none;
+            position: unset;
+            height: auto;
+            display: block;
+            margin: 0;
+            width: 100%;
+            padding: 0;
+            right: 0;
+            left: 0;
+            .close-menu-btn {
+                display: none;
+            }
+        }
+
+        .prime-nav {
+            display: flex;
+            float: right;
+            li a {
+                color: white;
+                margin-left: 2em;
+                font-size: 1em;
+
+             &:hover {
+                border-bottom: 2px white solid;
+             }
+            }
+
+            .twitter:hover {
+                filter: opacity(0.5) drop-shadow(0 0 0 #0e76a8);
+             }
+
+             .linkedin:hover {
+                filter: opacity(0.5) drop-shadow(0 0 0 #1DA1F2);
+             }
+        }
+    }
+  }
+
+  @media only screen and (min-width: 992px) {
+      body {
+          font-size: 22px;
+      }
+
+      header {
+          padding: 0 6em;
+      }
+
+      .container {
+        padding: 0 8em;
+    }
+  }
+
+  @media only screen and (min-width: 1200px) {
+      body {
+          font-size: 24px;
+      }
+
+    .container {
+            padding: 0 10em;
+    }
+
+    header {
+        padding: 0 12em;
+    }
+    
+  }

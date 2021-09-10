@@ -1,0 +1,93 @@
+section.skills {
+    background: #1F1B1B;
+    color: white;
+    text-align: center;
+    padding: 2em 1em;
+
+    .section-title {
+        position: relative;
+        span {
+            content: "";
+            position: absolute;
+            margin: 0 auto;
+            width: 130px;
+            border-bottom: 4px yellow solid;
+            left: 2em;
+            right: 0;
+            top: 2em;
+            height: 2px;
+        }
+    }
+
+
+
+    ul {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        margin: 0 auto;
+        max-width: 500px;
+        margin-left: 2em;
+        li {
+            background: #C4C4C4;
+            width: 6em;
+            height: 6em;
+            border-radius: 5em;
+            margin-bottom: 2em;
+            img {
+                margin-top: 1.8em;
+                width: 50%;
+                height: auto;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    body {
+      font-size: 1rem;
+    }
+
+    section.skills {
+        ul {
+            margin: 0 auto;
+            max-width: 700px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+  }
+
+
+  @media only screen and (min-width: 768px) {
+    body {
+      font-size: 1rem
+    }
+
+    .container {
+        padding: 0 4em;
+    }
+
+  }
+
+  @media only screen and (min-width: 992px) {
+      body {
+          font-size: 1.1rem
+      }
+
+      .container {
+        padding: 0 8em;
+    }
+
+  }
+
+  @media only screen and (min-width: 1200px) {
+      body {
+          font-size: 1.2rem;
+      }
+
+    .container {
+            padding: 0 10em;
+    }
+
+    
+  }

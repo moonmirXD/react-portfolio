@@ -1,0 +1,88 @@
+section.skills {
+  background: #1F1B1B;
+  color: white;
+  text-align: center;
+  padding: 2em 1em;
+}
+
+section.skills .section-title {
+  position: relative;
+}
+
+section.skills .section-title span {
+  content: "";
+  position: absolute;
+  margin: 0 auto;
+  width: 130px;
+  border-bottom: 4px yellow solid;
+  left: 2em;
+  right: 0;
+  top: 2em;
+  height: 2px;
+}
+
+section.skills ul {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  margin: 0 auto;
+  max-width: 500px;
+  margin-left: 2em;
+}
+
+section.skills ul li {
+  background: #C4C4C4;
+  width: 6em;
+  height: 6em;
+  border-radius: 5em;
+  margin-bottom: 2em;
+}
+
+section.skills ul li img {
+  margin-top: 1.8em;
+  width: 50%;
+  height: auto;
+}
+
+@media only screen and (min-width: 600px) {
+  body {
+    font-size: 1rem;
+  }
+  section.skills ul {
+    margin: 0 auto;
+    max-width: 700px;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  body {
+    font-size: 1rem;
+  }
+  .container {
+    padding: 0 4em;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  body {
+    font-size: 1.1rem;
+  }
+  .container {
+    padding: 0 8em;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  body {
+    font-size: 1.2rem;
+  }
+  .container {
+    padding: 0 10em;
+  }
+}
+/*# sourceMappingURL=skill.css.map */

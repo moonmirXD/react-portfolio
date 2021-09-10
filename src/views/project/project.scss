@@ -1,0 +1,137 @@
+section.section-project {
+    text-align: center;
+    color: white;
+    padding: 2em 2em;
+    // background: url('../images/endless-constellation.svg');
+    background-color: #147BF3;
+
+    .section-title {
+        position: relative;
+
+        span {
+            content: "";
+            position: absolute;
+            margin: 0 auto;
+            width: 130px;
+            border-bottom: 3px yellow solid;
+            left: 2em;
+            right: 0;
+            top: 1.3em;
+            height: 2px;
+        }
+    }
+
+    .section-header {
+        // font-size: 1.9rem;
+        margin-bottom: 3em;
+    }
+
+    p {
+        font-size: 1.1rem;
+    }
+
+    .description {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .project {
+    margin-bottom: 4em;
+        img {
+            width: 100%;
+            border-radius: 2em;
+            border: 1px solid #6246EA;
+        }
+
+        img:hover {
+            width: 100%;
+            border-radius: 2em;
+            border: 2px solid #6246EA;
+            cursor: pointer;
+        }
+    }
+    .container {
+        // margin-top: 10em;
+    }
+
+}
+
+.brown-blue {
+    height: 200px;
+    width: 100%;
+background-image: linear-gradient(
+176deg, rgba(194, 175, 175, 0.65) 56%, #147BF3 5%);
+}
+
+.blue-white {
+    height: 200px;
+    width: 100%;
+    background-image: linear-gradient(
+        176deg, #147BF3 56%, #fff 0);
+}
+
+
+@media only screen and (min-width: 600px) {
+    body {
+      font-size: 18px;
+    }
+  }
+
+
+  @media only screen and (min-width: 768px) {
+    body {
+      font-size: 20px;
+    }
+
+    .container {
+        padding: 0 4em;
+    }
+
+
+  }
+
+  @media only screen and (min-width: 992px) {
+      body {
+          font-size: 22px;
+      }
+
+      .container {
+        padding: 0 8em;
+    }
+
+
+      section.section-project {
+          font-size: 1em;
+
+          .project {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20%;
+            grid-template-areas: "description image";
+            justify-content: center;
+            text-align: left;
+          }
+          
+          img {
+              max-width: 600px;
+              grid-area: image;
+          }
+      }
+
+
+  }
+
+  @media only screen and (min-width: 1200px) {
+      body {
+          font-size: 24px;
+      }
+
+    .container {
+            padding: 0 10em;
+    }
+
+    header {
+        padding: 0 12em;
+    }
+    
+  }

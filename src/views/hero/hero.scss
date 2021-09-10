@@ -1,0 +1,144 @@
+main {
+    padding: 2em 2.2em;
+    color: white;
+    text-align: center;
+    height: 100%;
+    background: #1F1B1B;
+    .coding-img {
+        width: 100%;
+        margin: 4em auto;
+        display: block;
+    }
+
+    .subheader {
+        letter-spacing: .8em;
+        text-transform: uppercase;
+    }
+    
+    .left-col {
+        h1 {
+            font-size: 2.4rem;
+            width: 100%;
+            
+            span {
+                color: #6246EA;
+            }
+        }
+    
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 5em;
+        }
+        
+        a.view-button {
+            // margin-top: 5em;
+            background: #6246EA;
+            // display: inline-block;
+            // width: 200px;
+            padding: 1rem 3rem;
+            border-radius: 2.5rem;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+
+            img {
+                width: 1.4rem;
+                margin-right: .8em;
+            }
+
+            &:hover {
+                color: #6246EA;
+                background: white;
+                img {
+                    width: 1.4rem;
+                    margin-right: .8em;
+                    filter: opacity(0.5) drop-shadow(0 0 0 #6246EA);
+                }
+            }
+        }
+    }
+
+    .arrow-down {
+        margin-top: 1.3em;
+        width: 100px;
+        height: 100px;
+    }
+    
+}
+
+.black-brown {
+    height: 200px;
+    width: 100%;
+    background-image: linear-gradient(
+        176deg, #1F1B1B 56%, rgba(194, 175, 175, 0.65) 0);
+}
+
+@media only screen and (min-width: 600px) {
+    body {
+      font-size: 18px;
+    }
+  }
+
+
+  @media only screen and (min-width: 768px) {
+    body {
+      font-size: 20px;
+    }
+
+    .container {
+        padding: 0 4em;
+    }
+
+  }
+
+  @media only screen and (min-width: 992px) {
+      body {
+          font-size: 22px;
+      }
+
+      header {
+          padding: 0 6em;
+      }
+
+      .container {
+        padding: 0 8em;
+    }
+
+      main{
+        padding-top: 1em;
+          .left-col {
+              margin-top: 4em;
+              max-width: 500px;
+          }
+        
+          .content {
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              grid-template-areas: "description image";
+              text-align: left;
+
+              .subheader {
+                  font-size: .7em;
+                  text-align: center;
+                  margin-left: 7%;
+              }
+          }
+
+          .coding-img {
+              height: 300px;
+              grid-area: image;
+              max-width: 1000px;
+          }
+  
+      }
+  }
+
+  @media only screen and (min-width: 1200px) {
+      body {
+          font-size: 24px;
+      }
+
+    .container {
+            padding: 0 10em;
+    }
+  }

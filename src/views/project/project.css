@@ -1,0 +1,122 @@
+section.section-project {
+  text-align: center;
+  color: white;
+  padding: 2em 2em;
+  background-color: #147BF3;
+}
+
+section.section-project .section-title {
+  position: relative;
+}
+
+section.section-project .section-title span {
+  content: "";
+  position: absolute;
+  margin: 0 auto;
+  width: 130px;
+  border-bottom: 3px yellow solid;
+  left: 2em;
+  right: 0;
+  top: 1.3em;
+  height: 2px;
+}
+
+section.section-project .section-header {
+  margin-bottom: 3em;
+}
+
+section.section-project p {
+  font-size: 1.1rem;
+}
+
+section.section-project .description {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+section.section-project .project {
+  margin-bottom: 4em;
+}
+
+section.section-project .project img {
+  width: 100%;
+  border-radius: 2em;
+  border: 1px solid #6246EA;
+}
+
+section.section-project .project img:hover {
+  width: 100%;
+  border-radius: 2em;
+  border: 2px solid #6246EA;
+  cursor: pointer;
+}
+
+.brown-blue {
+  height: 200px;
+  width: 100%;
+  background-image: linear-gradient(176deg, rgba(194, 175, 175, 0.65) 56%, #147BF3 5%);
+}
+
+.blue-white {
+  height: 200px;
+  width: 100%;
+  background-image: linear-gradient(176deg, #147BF3 56%, #fff 0);
+}
+
+@media only screen and (min-width: 600px) {
+  body {
+    font-size: 18px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  body {
+    font-size: 20px;
+  }
+  .container {
+    padding: 0 4em;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  body {
+    font-size: 22px;
+  }
+  .container {
+    padding: 0 8em;
+  }
+  section.section-project {
+    font-size: 1em;
+  }
+  section.section-project .project {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+    gap: 20%;
+        grid-template-areas: "description image";
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    text-align: left;
+  }
+  section.section-project img {
+    max-width: 600px;
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+    grid-area: image;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  body {
+    font-size: 24px;
+  }
+  .container {
+    padding: 0 10em;
+  }
+  header {
+    padding: 0 12em;
+  }
+}
+/*# sourceMappingURL=project.css.map */

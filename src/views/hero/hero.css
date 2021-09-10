@@ -1,0 +1,134 @@
+main {
+  padding: 2em 2.2em;
+  color: white;
+  text-align: center;
+  height: 100%;
+  background: #1F1B1B;
+}
+
+main .coding-img {
+  width: 100%;
+  margin: 4em auto;
+  display: block;
+}
+
+main .subheader {
+  letter-spacing: .8em;
+  text-transform: uppercase;
+}
+
+main .left-col h1 {
+  font-size: 2.4rem;
+  width: 100%;
+}
+
+main .left-col h1 span {
+  color: #6246EA;
+}
+
+main .left-col p {
+  font-size: 1.1rem;
+  margin-bottom: 5em;
+}
+
+main .left-col a.view-button {
+  background: #6246EA;
+  padding: 1rem 3rem;
+  border-radius: 2.5rem;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+main .left-col a.view-button img {
+  width: 1.4rem;
+  margin-right: .8em;
+}
+
+main .left-col a.view-button:hover {
+  color: #6246EA;
+  background: white;
+}
+
+main .left-col a.view-button:hover img {
+  width: 1.4rem;
+  margin-right: .8em;
+  -webkit-filter: opacity(0.5) drop-shadow(0 0 0 #6246EA);
+          filter: opacity(0.5) drop-shadow(0 0 0 #6246EA);
+}
+
+main .arrow-down {
+  margin-top: 1.3em;
+  width: 100px;
+  height: 100px;
+}
+
+.black-brown {
+  height: 200px;
+  width: 100%;
+  background-image: linear-gradient(176deg, #1F1B1B 56%, rgba(194, 175, 175, 0.65) 0);
+}
+
+@media only screen and (min-width: 600px) {
+  body {
+    font-size: 18px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  body {
+    font-size: 20px;
+  }
+  .container {
+    padding: 0 4em;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  body {
+    font-size: 22px;
+  }
+  header {
+    padding: 0 6em;
+  }
+  .container {
+    padding: 0 8em;
+  }
+  main {
+    padding-top: 1em;
+  }
+  main .left-col {
+    margin-top: 4em;
+    max-width: 500px;
+  }
+  main .content {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: "description image";
+    text-align: left;
+  }
+  main .content .subheader {
+    font-size: .7em;
+    text-align: center;
+    margin-left: 7%;
+  }
+  main .coding-img {
+    height: 300px;
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+    grid-area: image;
+    max-width: 1000px;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  body {
+    font-size: 24px;
+  }
+  .container {
+    padding: 0 10em;
+  }
+}
+/*# sourceMappingURL=hero.css.map */
