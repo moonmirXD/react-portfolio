@@ -1,15 +1,18 @@
-import React, { useState, Component, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 
 import Rate from "rc-rate";
 import axios from "axios";
 import Swal from "sweetalert2";
 
 import emailIcon from "../../assets/images/email.png";
+import catGif from "../../assets/gifs/giphy.gif";
+import rickrollGif from "../../assets/gifs/dance-moves.gif";
 
 import "rc-rate/assets/index.css";
 import "./contact.css";
 
 const url = "https://portfolio-raiiiisu.herokuapp.com/api/contacts";
+const urlVisits = "https://portfolio-raiiiisu.herokuapp.com/api/visits";
 const Contact = () => {
   const [state, setState] = useState({
     ipAddress: "",
@@ -27,6 +30,26 @@ const Contact = () => {
       country,
       ipAddress,
     });
+    axios
+      .post(urlVisits, state)
+      .then((res) => {
+        Swal.fire({
+          title: "<span style='color: yellow'>Welcome to my portfolio!</span",
+          width: 600,
+          padding: "3em",
+          background: `#fff url(${rickrollGif})`,
+          allowOutsideClick: false,
+          // backdrop: `
+          //   rgba(0,0,123,0.4)
+          //   url(${catGif})
+          //   left top
+          //   no-repeat
+          // `,
+        });
+      })
+      .catch((error) => {
+        console.error("duplicated data");
+      });
   };
 
   const handleChange = (event) => {
@@ -70,22 +93,17 @@ const Contact = () => {
 
   useEffect(() => {
     getIpAddress();
-  }, []);
+  }, [getIpAddress]);
 
   return (
     <>
-      <section className='section-contact'>
+      <section className='section-contact' id='section-contact'>
         <div className='container'>
           <h1>Contact Me</h1>
           <div className='content-contact'>
             <form onSubmit={handleSubmit}>
               <div className='section-intro'>
-                <img
-                  src={emailIcon}
-                  alt='email'
-                  srcset=''
-                  className='email-img'
-                />
+                <img src={emailIcon} alt='email' className='email-img' />
                 <p>
                   Lorem ipsum dolor sit amet consectetur, adipisicing elit.
                   Veritatis, tempore!
@@ -123,7 +141,7 @@ const Contact = () => {
             <iframe
               src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d61777.87657630503!2d121.08812162562562!3d14.592392004031725!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397b87f701edd6b%3A0xe1c1fe496d818869!2sCainta%2C%20Rizal!5e0!3m2!1sen!2sph!4v1631199657594!5m2!1sen!2sph'
               style={{ border: 0, borderRadius: "1em" }}
-              allowfullscreen=''
+              allowFullScreen=''
               loading='lazy'
               className='google-map'
             ></iframe>

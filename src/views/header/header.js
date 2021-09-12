@@ -10,7 +10,7 @@ import React, { useEffect, useState } from "react";
 
 const Header = () => {
   const [showMenu, setShowMenu] = useState(false);
-  const [windowSize, setWindowSize] = useState("");
+  // const [windowSize, setWindowSize] = useState("");
 
   const toggleMenu = () => {
     setShowMenu(!showMenu);
@@ -18,7 +18,7 @@ const Header = () => {
 
   const updateWidthWindow = () => {
     const newWidth = window.innerWidth;
-    setWindowSize(newWidth);
+    // setWindowSize(newWidth);
     newWidth > 768 && setShowMenu(true);
   };
 
@@ -30,7 +30,7 @@ const Header = () => {
   return (
     <>
       <header>
-        <a className='logo' href='#'>
+        <a className='logo' href='#section-contact'>
           <h1>
             Raiiii<span>su</span>
           </h1>
@@ -65,7 +65,7 @@ const Navbar = ({ toggleMenu }) => {
         </a>
         <ul className='prime-nav'>
           <li className='home-nav'>
-            <a href='#'>Home</a>
+            <a href='#main'>Home</a>
           </li>
           <li className=''>
             <a href='#works'>Work</a>
