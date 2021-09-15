@@ -36,14 +36,14 @@ header .logo:hover span {
 
 nav {
   position: fixed;
-  width: 50%;
+  width: 40%;
   z-index: 999;
   background-color: #6246EA;
   padding: 1em;
   top: 0;
   right: 0;
   height: 100vh;
-  border: whitesmoke 4px solid;
+  border: #634cd6 4px solid;
 }
 
 nav .close-menu-btn {
