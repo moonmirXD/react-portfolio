@@ -3,6 +3,9 @@ section.skills {
     color: white;
     text-align: center;
     padding: 2em 1em;
+    margin: 0 auto;
+
+
 
     .section-title {
         position: relative;
@@ -19,14 +22,14 @@ section.skills {
         }
     }
 
-
-
     ul {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
         margin: 0 auto;
-        max-width: 500px;
-        margin-left: 2em;
+        max-width: 600px;
+        align-items: center;
+   justify-items: center;
+        // margin-left: 5em;
         li {
             background: #C4C4C4;
             width: 6em;
@@ -49,10 +52,11 @@ section.skills {
 
     section.skills {
         ul {
-            margin: 0 auto;
-            max-width: 700px;
             display: grid;
             grid-template-columns: repeat(3, 1fr);
+            margin: 0 auto;
+            max-width: 700px;
+            text-align: center;
         }
     }
   }

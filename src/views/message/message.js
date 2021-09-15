@@ -1,9 +1,7 @@
 import { useFetch } from "../../services/api";
 import loadingGif from "../../assets/gifs/Spinner-1s-200px.gif";
-
-const Visit = () => {
-  const { loading, data } = useFetch("visits");
-
+const Message = () => {
+  const { loading, data } = useFetch("contacts");
   if (loading) {
     return (
       <>
@@ -23,16 +21,20 @@ const Visit = () => {
   }
 };
 
+export default Message;
+
 const List = ({ data }) => {
   return (
     <>
       <div style={{ textAlign: "center" }}>
-        <h1>VISITS</h1>
-        <h3>Number of visits: {data.length}</h3>
+        <h1>MESSAGES</h1>
+        <h3>Number of message: {data.length}</h3>
       </div>
       <ul style={{ margin: "2em 2em" }}>
         {data.map((visit) => {
-          const { country, ipAddress, _id, createdAt } = visit;
+          const { country, ipAddress, _id, createdAt, email, message, rating } =
+            visit;
+
           return (
             <li
               key={_id}
@@ -47,6 +49,9 @@ const List = ({ data }) => {
                 borderRadius: "2em",
               }}
             >
+              <h4>Email: {email} </h4>
+              <h4>Message: {message} </h4>
+              <h4>Rating: {rating} </h4>
               <h4>Country: {country} </h4>
               <h4>Ip Address: {ipAddress}</h4>
               <h4>When: {new Date(createdAt).toString()}</h4>
@@ -57,5 +62,3 @@ const List = ({ data }) => {
     </>
   );
 };
-
-export default Visit;

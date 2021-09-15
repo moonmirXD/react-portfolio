@@ -12,6 +12,9 @@ import Contact from "./views/contact/contact";
 import "./App.css";
 import "font-awesome/css/font-awesome.min.css";
 import Visit from "./views/visit/visit";
+import Message from "./views/message/message";
+const FIRST_PATH = process.env.REACT_APP_FIRST_PATH;
+const SECOND_PATH = process.env.REACT_APP_SECOND_PATH;
 
 function App() {
   return (
@@ -24,21 +27,12 @@ function App() {
       <title>Raiiiisu's Portfolio</title>
 
       <Router>
-        {/* <Header />
-        <Hero />
-        <Work />
-        <Project />
-        <Expertise />
-        <Skill />
-        <Contact />
-        <ScrollToTop
-          smooth
-          color='black'
-          style={{ backgroundColor: "#DBF3FA" }}
-        /> */}
         <Switch>
-          <Route path='/visit'>
+          <Route path={`/${FIRST_PATH}`}>
             <Visit />
+          </Route>
+          <Route path={`/${SECOND_PATH}`}>
+            <Message />
           </Route>
           <Route path='/'>
             <Header />

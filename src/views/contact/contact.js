@@ -1,18 +1,17 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useStateWithCallbackLazy } from "react";
 
 import Rate from "rc-rate";
 import axios from "axios";
 import Swal from "sweetalert2";
 
 import emailIcon from "../../assets/images/email.png";
-import catGif from "../../assets/gifs/giphy.gif";
 import rickrollGif from "../../assets/gifs/dance-moves.gif";
 
 import "rc-rate/assets/index.css";
 import "./contact.css";
 
-const url = "https://portfolio-raiiiisu.herokuapp.com/api/contacts";
-const urlVisits = "https://portfolio-raiiiisu.herokuapp.com/api/visits";
+const BASE_URL = process.env.REACT_APP_BASE_URL;
+
 const Contact = () => {
   const [state, setState] = useState({
     ipAddress: "",
@@ -23,33 +22,31 @@ const Contact = () => {
   });
 
   const getIpAddress = async () => {
-    const response = await axios.get("https://geolocation-db.com/json/");
-    const { country_name: country, IPv4: ipAddress } = response.data;
-    setState({
-      ...state,
-      country,
-      ipAddress,
-    });
-    axios
-      .post(urlVisits, state)
-      .then((res) => {
-        Swal.fire({
-          title: "<span style='color: yellow'>Welcome to my portfolio!</span",
-          width: 600,
-          padding: "3em",
-          background: `#fff url(${rickrollGif})`,
-          allowOutsideClick: false,
-          // backdrop: `
-          //   rgba(0,0,123,0.4)
-          //   url(${catGif})
-          //   left top
-          //   no-repeat
-          // `,
-        });
-      })
-      .catch((error) => {
-        console.error("duplicated data");
+    try {
+      const response = await axios.get("https://geolocation-db.com/json/");
+      const { country_name: country, IPv4: ipAddress } = response.data;
+
+      setState({
+        ...state,
+        country,
+        ipAddress,
       });
+      postIpAddress({ country, ipAddress });
+    } catch (error) {
+      console.error("duplicated data", error);
+    }
+  };
+
+  const postIpAddress = (data) => {
+    axios.post(`${BASE_URL}visits`, data).then(() => {
+      Swal.fire({
+        title: "<span style='color: yellow'>Welcome to my portfolio!</span",
+        width: 600,
+        padding: "3em",
+        background: `#fff url(${rickrollGif})`,
+        allowOutsideClick: false,
+      });
+    });
   };
 
   const handleChange = (event) => {
@@ -62,7 +59,7 @@ const Contact = () => {
     });
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
 
     if (!state.message || !state.email) {
@@ -74,26 +71,34 @@ const Contact = () => {
     }
 
     if (state.message && state.email) {
-      axios.post(url, state).then((res) => {
-        Swal.fire({
-          icon: "success",
-          title: "Message sent!",
-          showConfirmButton: false,
-          timer: 1500,
-        });
-      });
+      try {
+        const response = axios.post(`${BASE_URL}contacts`, state);
+        if (response) {
+          Swal.fire({
+            icon: "success",
+            title: "Message sent!",
+            showConfirmButton: false,
+            timer: 1500,
+          });
+        }
+      } catch (error) {
+        console.log(error);
+      }
 
       setState({
         message: "",
         email: "",
-        rating: "",
+        rating: 0,
+        ipAddress: "",
+        country: "",
       });
     }
   };
 
   useEffect(() => {
     getIpAddress();
-  }, [getIpAddress]);
+    // postIpAddress();
+  }, []);
 
   return (
     <>
@@ -130,10 +135,14 @@ const Contact = () => {
                   onChange={handleChange}
                 ></textarea>
               </div>
-              <h3 style={{ color: "#cccc09" }}>Rate me 🥺</h3>
+              <h3>Rate me:</h3>
               <Rate
-                defaultValue={state.value}
-                style={{ marginBottom: "1em", fontSize: "2.5em" }}
+                defaultValue={state.rating}
+                style={{
+                  marginBottom: "1em",
+                  marginTop: "-0.5em",
+                  fontSize: "2.5em",
+                }}
                 onChange={(value) => setState({ ...state, rating: value })}
               />
               <button type='submit'>Send</button>

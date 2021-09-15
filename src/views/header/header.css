@@ -38,11 +38,12 @@ nav {
   position: fixed;
   width: 50%;
   z-index: 999;
-  background-color: salmon;
+  background-color: #6246EA;
   padding: 1em;
   top: 0;
   right: 0;
   height: 100vh;
+  border: whitesmoke 4px solid;
 }
 
 nav .close-menu-btn {
@@ -54,8 +55,8 @@ nav .close-menu-btn {
 }
 
 nav ul {
-  text-align: center;
-  margin: 4em auto;
+  text-align: right;
+  margin: 3em auto;
 }
 
 nav ul li a {
@@ -68,6 +69,9 @@ nav ul li a {
 
 nav ul li a:hover {
   font-weight: bolder;
+  background-color: #414a4c;
+  border-radius: .5em;
+  text-align: center;
 }
 
 @media only screen and (min-width: 600px) {
@@ -101,6 +105,7 @@ nav ul li a:hover {
     padding: 0;
     right: 0;
     left: 0;
+    border: 0;
   }
   header nav .close-menu-btn {
     display: none;
@@ -114,9 +119,12 @@ nav ul li a:hover {
   header .prime-nav li a {
     color: white;
     margin-left: 2em;
-    font-size: 1em;
+    font-size: 1.4rem;
   }
   header .prime-nav li a:hover {
+    background-color: unset;
+    border-radius: unset;
+    text-align: unset;
     border-bottom: 2px white solid;
   }
   header .prime-nav .twitter:hover {

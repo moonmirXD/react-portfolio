@@ -34,12 +34,12 @@ nav {
     position: fixed;
     width: 50%;
     z-index: 999;
-    background-color: salmon;
+    background-color: #6246EA;
     padding: 1em;
     top: 0;
     right: 0;
     height: 100vh;
-
+    border: whitesmoke 4px solid;
     .close-menu-btn {
         float: right;
         display: block;
@@ -47,8 +47,8 @@ nav {
         filter: invert(93%) sepia(100%) saturate(0%) hue-rotate(248deg) brightness(106%) contrast(106%);
     }
     ul {
-        text-align: center;
-        margin: 4em auto;
+        text-align: right;
+        margin: 3em auto;
 
         li {
             
@@ -61,6 +61,9 @@ nav {
 
                 &:hover {
                     font-weight: bolder;
+                    background-color: #414a4c;
+                    border-radius: .5em;
+                    text-align: center;
                 }
             }
         }
@@ -103,6 +106,7 @@ nav {
             padding: 0;
             right: 0;
             left: 0;
+            border: 0;
             .close-menu-btn {
                 display: none;
             }
@@ -114,9 +118,12 @@ nav {
             li a {
                 color: white;
                 margin-left: 2em;
-                font-size: 1em;
+                font-size: 1.4rem;
 
              &:hover {
+                background-color: unset;
+                border-radius: unset;
+                text-align: unset;
                 border-bottom: 2px white solid;
              }
             }
