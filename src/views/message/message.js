@@ -1,3 +1,4 @@
+import { useHistory } from "react-router-dom";
 import { useFetch } from "../../services/api";
 import loadingGif from "../../assets/gifs/Spinner-1s-200px.gif";
 const Message = () => {
@@ -24,12 +25,27 @@ const Message = () => {
 export default Message;
 
 const List = ({ data }) => {
+  const history = useHistory();
+  const handleClick = (url) => {
+    history.push(url);
+  };
   return (
     <>
       <div style={{ textAlign: "center" }}>
         <h1>MESSAGES</h1>
+        <button
+          type='button'
+          onClick={() => handleClick("/")}
+          style={{ marginRight: "1em" }}
+        >
+          Home
+        </button>
+        <button type='button' onClick={() => handleClick("/visit")}>
+          Visits
+        </button>
         <h3>Number of message: {data.length}</h3>
       </div>
+      <hr />
       <ul style={{ margin: "2em 2em" }}>
         {data.map((visit) => {
           const { country, ipAddress, _id, createdAt, email, message, rating } =

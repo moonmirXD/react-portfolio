@@ -1,3 +1,4 @@
+import { useHistory } from "react-router-dom";
 import Table from "rc-table";
 import { useFetch } from "../../services/api";
 import loadingGif from "../../assets/gifs/Spinner-1s-200px.gif";
@@ -25,8 +26,12 @@ const Visit = () => {
 };
 
 const List = ({ data }) => {
-  const countryObj = {};
+  const history = useHistory();
+  const handleClick = (url) => {
+    history.push(url);
+  };
 
+  const countryObj = {};
   data.map((element) => {
     countryObj[element.country] = countryObj[element.country] + 1 || 1;
   });
@@ -51,11 +56,22 @@ const List = ({ data }) => {
       width: 800,
     },
   ];
+
   return (
     <>
       <div className='container'>
         <div style={{ textAlign: "center" }}>
           <h1>VISITS</h1>
+          <button
+            type='button'
+            onClick={() => handleClick("/")}
+            style={{ marginRight: "1em" }}
+          >
+            Home
+          </button>
+          <button type='button' onClick={() => handleClick("/message")}>
+            Messages
+          </button>
           <h3>Number of visits: {data.length}</h3>
         </div>
         <hr />

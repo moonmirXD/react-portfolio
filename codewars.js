@@ -147,24 +147,24 @@
 // console.log(validAnagram('qwerty', 'qeywrt'));
 // console.log(validAnagram('texttwisttime', 'timetwisttext'))
 
-const countUniqueValues = (num) => {
-  let i = 0;
-  // for(let j = 1; j < num.length; j++){
-  //   if(num[i] !== num[j]){
-  //     i += 1;
-  //     num[i] = num[j];
-  //   }
-  // }
-  num.forEach((number, index) => {
-    if (num[i] !== num[index]) {
-      i += 1;
-      num[i] = num[index];
-    }
-  });
-  return i === 0 ? 0 : i + 1;
-};
+// const countUniqueValues = (num) => {
+//   let i = 0;
+//   // for(let j = 1; j < num.length; j++){
+//   //   if(num[i] !== num[j]){
+//   //     i += 1;
+//   //     num[i] = num[j];
+//   //   }
+//   // }
+//   num.forEach((number, index) => {
+//     if (num[i] !== num[index]) {
+//       i += 1;
+//       num[i] = num[index];
+//     }
+//   });
+//   return i === 0 ? 0 : i + 1;
+// };
 
-countUniqueValues([1, 1, 2, 3, 5, 5, 5, 5, 6, 7]);
-countUniqueValues([6, 6, 6, 6, 6, 2]);
-countUniqueValues([3, 3, 3, 3, 3]);
-countUniqueValues([2, 2, 2, 1]);
+// countUniqueValues([1, 1, 2, 3, 5, 5, 5, 5, 6, 7]);
+// countUniqueValues([6, 6, 6, 6, 6, 2]);
+// countUniqueValues([3, 3, 3, 3, 3]);
+// countUniqueValues([2, 2, 2, 1]);
