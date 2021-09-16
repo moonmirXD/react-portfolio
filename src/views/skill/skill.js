@@ -1,3 +1,4 @@
+import ScrollAnimation from "react-animate-on-scroll";
 import "./skill.css";
 import cssIcon from "../../assets/images/vscode-icons_file-type-css.svg";
 import htmlIcon from "../../assets/images/vscode-icons_file-type-html.svg";
@@ -14,43 +15,49 @@ const Skill = () => {
     <>
       <section className='skills' id='skills'>
         <div className='container'>
-          <div className='section-title'>
-            <h1>Skills</h1>
-            <span className='tag-line'></span>
-          </div>
+          <ScrollAnimation
+            animateIn='slideInLeft'
+            animateOut='fadeOut'
+            duration={1.2}
+          >
+            <div className='section-title'>
+              <h1>Skills</h1>
+              <span className='tag-line'></span>
+            </div>
 
-          <ul>
-            <li>
-              <img src={htmlIcon} alt='html' />
-            </li>
-            <li>
-              <img src={cssIcon} alt='css' />
-            </li>
-            <li>
-              <img src={scssIcon} alt='scss' />
-            </li>
-            <li>
-              <img src={jsIcon} alt='javascript' />
-            </li>
-            <li>
-              <img src={bootstrapIcon} alt='bootstrap' />
-            </li>
-            <li>
-              <img src={angularIcon} alt='angular' />
-            </li>
-            <li>
-              <img src={tsIcon} alt='typescript' />
-            </li>
-            <li>
-              <img src={nestjsIcon} alt='nestjs' />
-            </li>
-            <li>
-              <img src={nodejsIcon} alt='nodejs' />
-            </li>
-            <li>
-              <img src={mongodbIcon} alt='mongodb' />
-            </li>
-          </ul>
+            <ul>
+              <li>
+                <img src={htmlIcon} alt='html' />
+              </li>
+              <li>
+                <img src={cssIcon} alt='css' />
+              </li>
+              <li>
+                <img src={scssIcon} alt='scss' />
+              </li>
+              <li>
+                <img src={jsIcon} alt='javascript' />
+              </li>
+              <li>
+                <img src={bootstrapIcon} alt='bootstrap' />
+              </li>
+              <li>
+                <img src={angularIcon} alt='angular' />
+              </li>
+              <li>
+                <img src={tsIcon} alt='typescript' />
+              </li>
+              <li>
+                <img src={nestjsIcon} alt='nestjs' />
+              </li>
+              <li>
+                <img src={nodejsIcon} alt='nodejs' />
+              </li>
+              <li>
+                <img src={mongodbIcon} alt='mongodb' />
+              </li>
+            </ul>
+          </ScrollAnimation>
         </div>
       </section>
     </>
