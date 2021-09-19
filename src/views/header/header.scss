@@ -32,14 +32,16 @@ header {
 
 nav {
     position: fixed;
-    width: 40%;
+    width: 45%;
     z-index: 999;
-    background-color: #6246EA;
+    background-color: #353839;
     padding: 1em;
     top: 0;
     right: 0;
     height: 100vh;
+    border-radius: 1.3em;
     border: #634cd6 4px solid;
+    // height: 100%;
     .close-menu-btn {
         float: right;
         display: block;
@@ -57,10 +59,11 @@ nav {
                 color: white;
                 display: block;
                 padding: 0.3em;
-                font-weight: normal;
-
+                font-weight: 500;
                 &:hover {
-                    font-weight: bolder;
+                    // font-weight: bolder;
+                    // position: absolute;
+                    color: #149414;
                     background-color: #414a4c;
                     border-radius: .5em;
                     text-align: center;

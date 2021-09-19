@@ -65,13 +65,13 @@ const Navbar = ({ toggleMenu }) => {
         </a>
         <ul className='prime-nav'>
           <li className='home-nav'>
-            <a href='#main'>Home</a>
+            <a href='#main'>.Home();</a>
           </li>
           <li className=''>
-            <a href='#works'>Work</a>
+            <a href='#works'>.Work();</a>
           </li>
           <li className=''>
-            <a href='#skills'>Skills</a>
+            <a href='#skills'>.Skill();</a>
           </li>
           <li>
             <a

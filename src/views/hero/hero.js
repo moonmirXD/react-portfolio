@@ -10,8 +10,6 @@ const Hero = () => {
   const [state, setState] = useState({
     subHeader: "I could play",
     name: "I’m Ryan Arqueza",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Scelerisque id turpis semper egestas.",
   });
 
   const { subHeader, name, description } = state;
@@ -21,19 +19,30 @@ const Hero = () => {
       <main id='main'>
         <div className='container'>
           <Animated
-            animationIn='bounceInLeft'
+            animationIn='fadeIn'
             animationOut='fadeOut'
             isVisible={true}
-            animationInDuration={1000}
+            animationInDuration={2000}
           >
             <div className='content'>
               <img src={codingPhoto} alt='coding' className='coding-img' />
               <div className='left-col'>
                 <span className='subheader'>{subHeader}</span>
                 <h1>
-                  Hello, {name} a <span>Full-stack Developer</span>.
+                  Hello, {name} a{" "}
+                  <span>
+                    I create{" "}
+                    <span style={{ color: "white", fontFamily: "cursive" }}>
+                      objects
+                    </span>{" "}
+                    in Web
+                  </span>
+                  .
                 </h1>
-                <p>{description}</p>
+                <p>
+                  '"Accept that because we were born with nothing, we can become
+                  anything" - <i>Sora</i>
+                </p>
                 <a href={resumePDF} download className='view-button'>
                   <img src={magnifierLogo} alt='magnifier' />
                   View resume

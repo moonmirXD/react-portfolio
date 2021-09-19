@@ -16,12 +16,12 @@ const Skill = () => {
       <section className='skills' id='skills'>
         <div className='container'>
           <ScrollAnimation
-            animateIn='slideInLeft'
+            animateIn='bounceInLeft'
             animateOut='fadeOut'
             duration={1.2}
           >
             <div className='section-title'>
-              <h1>Skills</h1>
+              <h1>.Skill();</h1>
               <span className='tag-line'></span>
             </div>
 

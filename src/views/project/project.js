@@ -17,7 +17,7 @@ const Project = () => {
             <div className='section-header'>
               <div className='section-title'>
                 <h1>
-                  Projects <span className='tag-line'></span>
+                  .Project(); <span className='tag-line'></span>
                 </h1>
               </div>
               <div className='subheader'>

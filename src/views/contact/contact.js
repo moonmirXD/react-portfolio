@@ -110,9 +110,9 @@ const Contact = () => {
               <div className='section-intro'>
                 <img src={emailIcon} alt='email' className='email-img' />
                 <p>
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                  Veritatis, tempore!
+                  <strong>How can I help?</strong>
                 </p>
+                <p style={{ marginTop: "-1em" }}>Message me for inquiries.</p>
               </div>
               <div className='form-control'>
                 <input
